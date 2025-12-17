@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/content';
 
 const Home = () => {
@@ -37,7 +38,7 @@ const Home = () => {
           <div className="project-info">
             <h3>{project.title}</h3>
             <p className="project-desc">{project.description}</p>
-            <a href="#" className="pixel-btn">{">>"} VIEW PROJECT</a>
+            <Link to={`/project/${project.id}`} className="pixel-btn">{">>"} VIEW PROJECT</Link>
           </div>
         </motion.div>
       ))}

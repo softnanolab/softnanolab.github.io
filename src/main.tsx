@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Team from './pages/Team'
 import Publications from './pages/Publications'
 import Contact from './pages/Contact'
+import ProjectDetail from './pages/ProjectDetail'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/team" element={<Team />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </Layout>
     </Router>
