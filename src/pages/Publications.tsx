@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { publications } from '../data/content';
+import { publications } from '../data/publications';
 
 const Publications = () => {
   return (

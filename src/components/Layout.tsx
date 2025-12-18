@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import { site } from '../data/site';
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,26 +23,22 @@ const Layout = ({ children }: LayoutProps) => {
                 scale: 1.02
               }}
             >
-              SoftNanoLab
+              {site.title}
             </motion.h1>
           </Link>
-          <p className="subtitle">Exploring the soft and small.</p>
+          <p className="subtitle">{site.subtitle}</p>
           
           <nav className="funky-nav">
-            <Link to="/team" className="nav-btn team-btn">
-              <span className="btn-icon">👥</span> TEAM
-            </Link>
-            <Link to="/publications" className="nav-btn pub-btn">
-              <span className="btn-icon">📜</span> PUBLICATIONS
-            </Link>
-            <Link to="/contact" className="nav-btn contact-btn">
-              <span className="btn-icon">📠</span> CONTACT
-            </Link>
+            {site.navLinks.map((link) => (
+              <Link key={link.path} to={link.path} className="nav-btn">
+                <span className="btn-icon">{link.icon}</span> {link.label}
+              </Link>
+            ))}
           </nav>
 
           <div className="marquee-container">
             <div className="marquee-text">
-              +++ LATEST: New paper in Nature Nanotech +++ PhD positions open for Fall 2025 +++ Seminar this Friday: Dr. Freeman on Quantum Foam +++
+              {site.marqueeText}
             </div>
           </div>
         </header>
@@ -51,7 +48,7 @@ const Layout = ({ children }: LayoutProps) => {
         </main>
 
         <footer>
-          <p>&copy; 2025 SoftNanoLab. All rights reserved.</p>
+          <p>{site.footerText}</p>
         </footer>
       </div>
     </div>

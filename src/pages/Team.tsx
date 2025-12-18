@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { team } from '../data/content';
+import { Link } from 'react-router-dom';
+import { useTeam } from '../data/hooks';
 
 const Team = () => {
+  const team = useTeam();
   return (
     <>
-      <h2 className="section-title">The Team</h2>
-      
       <motion.section 
         className="christmas-section"
         initial={{ opacity: 0, y: 30 }}
@@ -28,9 +28,11 @@ const Team = () => {
               className="christmas-dinner-image"
             />
           </div>
-          <p className="christmas-tagline">Santa prefers native conformations</p>
+          <p className="christmas-tagline">"Santa prefers native conformations"</p>
         </div>
       </motion.section>
+
+      <h2 className="section-title">The Team</h2>
 
       <div className="team-grid">
         {team.map((member, index) => (
@@ -42,10 +44,17 @@ const Team = () => {
             transition={{ delay: (index * 0.1) + 0.5 }}
             whileHover={{ y: -10 }}
           >
-            <div className="member-avatar">{member.avatar}</div>
+            <div className="member-avatar">
+              {member.image ? (
+                <img src={member.image} alt={member.name} className="member-photo" />
+              ) : (
+                member.avatar
+              )}
+            </div>
             <h3>{member.name}</h3>
             <div className="member-role">{member.role}</div>
             <p>{member.bio}</p>
+            <Link to={`/person/${member.id}`} className="pixel-btn">{">>"} KNOW MORE</Link>
           </motion.div>
         ))}
       </div>

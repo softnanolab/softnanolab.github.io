@@ -1,10 +1,15 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { projects } from '../data/content';
+import { useProjectById } from '../data/hooks';
+
+const projectMarkdownFiles = import.meta.glob('../content/projects/*.md', {
+  as: 'raw',
+  eager: true,
+});
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const project = projects.find(p => p.id === id);
+  const project = useProjectById(id);
 
   if (!project) {
     return (
@@ -62,6 +67,13 @@ const ProjectDetail = () => {
     return elements;
   };
 
+  const getProjectContent = (projectId: string | undefined): string | null => {
+    if (!projectId) return null;
+    const path = `../content/projects/${projectId}.md`;
+    const file = projectMarkdownFiles[path] as string | undefined;
+    return file ?? null;
+  };
+
   return (
     <motion.article
       className="project-detail"
@@ -98,9 +110,9 @@ const ProjectDetail = () => {
         <p className="project-description-large">{project.description}</p>
       </div>
 
-      {project.content && (
+      {getProjectContent(project.id) && (
         <div className="project-content">
-          {parseContent(project.content)}
+          {parseContent(getProjectContent(project.id) as string)}
         </div>
       )}
 

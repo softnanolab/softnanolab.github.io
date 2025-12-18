@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { projects } from '../data/content';
+import { useProjects } from '../data/hooks';
 
 const Home = () => {
+  const projects = useProjects();
   return (
     <>
       <motion.section 
