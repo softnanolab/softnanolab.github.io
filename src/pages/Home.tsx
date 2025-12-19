@@ -43,6 +43,21 @@ const Home = () => {
           </div>
         </motion.div>
       ))}
+
+      <motion.section 
+        className="contact-section"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <p className="contact-text">
+          If you are an experimental biologist, chemist, ML engineer, or just want to chat, 
+          please drop an email to{' '}
+          <a href="mailto:stefano@ic.ac.uk" className="contact-link">Stefano</a> (stefano@ic.ac.uk) 
+          or{' '}
+          <a href="mailto:jakublala@gmail.com" className="contact-link">Jakub</a> (jakublala@gmail.com)
+        </p>
+      </motion.section>
     </>
   );
 };

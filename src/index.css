@@ -497,6 +497,37 @@ header {
     box-shadow: 4px 4px 0px var(--light-blue);
 }
 
+/* Contact Section */
+.contact-section {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-weight: 500;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-link {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid var(--red);
+    transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--dark-blue);
+    border-bottom-color: var(--dark-blue);
+    background-color: var(--light-blue);
+    padding: 0 0.2rem;
+}
+
 /* Footer */
 footer {
     margin-top: 5rem;
@@ -910,8 +941,8 @@ footer {
 .christmas-sock-right {
     position: absolute;
     top: 10px;
-    width: 40px;
-    height: 60px;
+    width: 60px;
+    height: 90px;
     z-index: 5;
     animation: swing 3s ease-in-out infinite;
 }
@@ -931,45 +962,63 @@ footer {
     50% { transform: rotate(5deg); }
 }
 
-/* Pixelated Sock Design */
+/* Pixelated Sock Design - Realistic sock shape */
 .christmas-sock-left::before,
 .christmas-sock-right::before {
     content: '';
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 60px;
+    height: 90px;
     image-rendering: pixelated;
-    background-color: transparent;
-    /* 8x10 pixel-art sock, each 'pixel' is 4x4 via box-shadow */
-    box-shadow:
-        /* cuff (white, 4px tall) */
-        8px 0px white, 12px 0px white, 16px 0px white, 20px 0px white,
-        8px 4px white, 12px 4px white, 16px 4px white, 20px 4px white,
-        /* leg stripes */
-        8px 8px #DC143C, 12px 8px #DC143C, 16px 8px #DC143C,
-        8px 12px #DC143C, 12px 12px #DC143C, 16px 12px #DC143C,
-        8px 16px white, 12px 16px white, 16px 16px white,
-        8px 20px white, 12px 20px white, 16px 20px white,
-        8px 24px #DC143C, 12px 24px #DC143C, 16px 24px #DC143C,
-        8px 28px #DC143C, 12px 28px #DC143C, 16px 28px #DC143C,
-        /* foot (red) */
-        12px 32px #DC143C, 16px 32px #DC143C, 20px 32px #DC143C,
-        12px 36px #DC143C, 16px 36px #DC143C, 20px 36px #DC143C;
+    background-color: white;
+    /* Sock shape: wider cuff at top, narrows in leg, widens at foot */
+    clip-path: polygon(
+        20% 0%, 80% 0%, 85% 5%, 88% 15%, 85% 30%,
+        82% 45%, 78% 58%, 75% 68%, 70% 75%,
+        65% 80%, 60% 83%, 55% 85%, 50% 86%,
+        45% 85%, 40% 83%, 35% 80%, 30% 75%,
+        25% 68%, 22% 58%, 18% 45%, 15% 30%,
+        12% 15%, 15% 5%
+    );
+    border: 2px solid var(--dark-blue);
+    /* Create striped pattern */
+    background-image: 
+        /* White cuff */
+        linear-gradient(to bottom, white 0%, white 12%),
+        /* Red stripe */
+        linear-gradient(to bottom, #DC143C 12%, #DC143C 20%),
+        /* White stripe */
+        linear-gradient(to bottom, white 20%, white 28%),
+        /* Red stripe */
+        linear-gradient(to bottom, #DC143C 28%, #DC143C 36%),
+        /* White stripe */
+        linear-gradient(to bottom, white 36%, white 44%),
+        /* Red stripe */
+        linear-gradient(to bottom, #DC143C 44%, #DC143C 52%),
+        /* White stripe */
+        linear-gradient(to bottom, white 52%, white 60%),
+        /* Red foot */
+        linear-gradient(to bottom, #DC143C 60%, #DC143C 100%);
+    background-size: 100% 12%, 100% 8%, 100% 8%, 100% 8%, 100% 8%, 100% 8%, 100% 8%, 100% 40%;
+    background-position: 0 0, 0 12%, 0 20%, 0 28%, 0 36%, 0 44%, 0 52%, 0 60%;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.2));
 }
 
 .christmas-sock-left::after,
 .christmas-sock-right::after {
     content: '';
     position: absolute;
-    top: -12px;
+    top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
-    height: 12px;
+    width: 10px;
+    height: 16px;
     background-color: #8B4513;
-    border: 1px solid #654321;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+    border: 2px solid #654321;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
     box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+    z-index: 6;
 }
 
 .christmas-content {
