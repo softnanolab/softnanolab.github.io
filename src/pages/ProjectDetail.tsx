@@ -117,7 +117,19 @@ const ProjectDetail = () => {
           <h1 className="project-title-large">{project.title}</h1>
           <div className="project-meta">
             {project.date && <span className="project-date">📅 {project.date}</span>}
-            {project.author && <span className="project-author">✍️ {project.author}</span>}
+            {project.author && (
+              <div className="project-authors-detail">
+                {project.author
+                  .split(/[&,]/)
+                  .map((author) => author.trim())
+                  .filter((author) => author.length > 0)
+                  .map((author, index) => (
+                    <span key={index} className="project-author">
+                      ✍️ {author}
+                    </span>
+                  ))}
+              </div>
+            )}
             <span className="project-type">{project.type}</span>
           </div>
           {project.tags && project.tags.length > 0 && (

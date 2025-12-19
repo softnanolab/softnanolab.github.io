@@ -368,6 +368,25 @@ header {
   text-shadow: 2px 2px 0px var(--light-blue);
 }
 
+.project-authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-author {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--dark-blue);
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  background-color: var(--light-blue);
+  border: 2px solid var(--med-blue);
+  box-shadow: 2px 2px 0px var(--dark-blue);
+  font-family: var(--font-main);
+}
+
 .project-desc {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
@@ -693,10 +712,24 @@ footer {
 }
 
 .project-date,
-.project-author {
+.project-authors-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-meta .project-author {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--dark-blue);
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  background-color: var(--light-blue);
+  border: 2px solid var(--med-blue);
+  box-shadow: 2px 2px 0px var(--dark-blue);
+  font-family: var(--font-main);
 }
 
 .project-type {

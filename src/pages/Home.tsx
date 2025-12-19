@@ -46,6 +46,19 @@ const Home = () => {
           </div>
           <div className="project-info">
             <h3>{project.title}</h3>
+            {project.author && (
+              <div className="project-authors">
+                {project.author
+                  .split(/[&,]/)
+                  .map((author) => author.trim())
+                  .filter((author) => author.length > 0)
+                  .map((author, index) => (
+                    <span key={index} className="project-author">
+                      {author}
+                    </span>
+                  ))}
+              </div>
+            )}
             <p className="project-desc">{project.description}</p>
             <Link to={`/project/${project.id}`} className="pixel-btn">
               {'>>'} VIEW PROJECT
