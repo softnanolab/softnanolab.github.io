@@ -7,7 +7,6 @@ export interface SocialLinks {
 }
 
 export interface TeamMember {
-  id: number;
   name: string;
   role: string;
   bio: string;
@@ -16,33 +15,19 @@ export interface TeamMember {
   socialLinks?: SocialLinks; // Optional social media links
 }
 
+// Helper function to create slug from name for routing
+export function getNameSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 export const team: TeamMember[] = [
   {
-    id: 1,
-    name: 'Dr. Freeman',
-    role: 'Principal Investigator',
-    bio: 'Expert in soft matter physics and retro gaming.',
-    avatar: '\ud83d\udc7e',
-  },
-  {
-    id: 2,
-    name: 'Alyx V.',
-    role: 'Postdoc',
-    bio: 'Specializes in toroidal structures.',
-    avatar: '\ud83d\udc69\u200d\ud83e\udd1d',
-  },
-  {
-    id: 3,
-    name: 'Gordon B.',
-    role: 'PhD Student',
-    bio: 'Researching quantum decoherence.',
-    avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
-  },
-  {
-    id: 4,
     name: 'Dr. Stefano Angioletti-Uberti',
     role: 'Lab Lead',
-    bio: 'Will calmly discuss algorithms — until someone mentions \'immune system\' and his eyes light up',
+    bio: '"Pretends to care about code. Accidentally reveals true love for immunology"',
     avatar: '\ud83d\udc68\u200d\ud83e\uddd1\u200d\ud83c\udf93',
     image: '/stefano-angioletti-uberti.jpeg',
     socialLinks: {
@@ -52,5 +37,33 @@ export const team: TeamMember[] = [
       linkedin: 'https://linkedin.com/in/example',
       github: 'https://github.com/example',
     },
+  },
+  {
+    name: 'Jakub Lala',
+    role: 'PhD Student',
+    bio: '"Takes a break from orchestrating 20 cursor agents by shitposting on X"',
+    avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
+    image: '/jakub-lala.jpg',
+  },
+  {
+    name: 'Jude Wells',
+    role: 'Post Doc',
+    bio: '"1PHD.pdb, 1DJ2.pdb"',
+    avatar: '\ud83c\udfb6',
+    image: '/jude-wells.jpg',
+  },
+  {
+    name: 'Harsh Agrawal',
+    role: 'Master\'s Student',
+    bio: '"Will wake up every sunday and refactor the entire codebase rather than writing tests"',
+    avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
+    image: '/harsh-agrawal.jpg',
+  },
+  {
+    name: 'Jiayang Zhang',
+    role: 'Master\'s Student',
+    bio: '"huggingface is never as good as hugging trees"',
+    avatar: '\ud83c\udf32',
+    image: '/jiyang-zhang.jpg',
   },
 ];

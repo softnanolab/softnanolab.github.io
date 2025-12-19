@@ -1,5 +1,5 @@
 import { projects } from './projects';
-import { team } from './team';
+import { team, getNameSlug } from './team';
 import type { Project } from './projects';
 import type { TeamMember } from './team';
 
@@ -16,11 +16,9 @@ export function useTeam(): TeamMember[] {
   return team;
 }
 
-export function usePersonById(id: string | undefined): TeamMember | undefined {
-  if (!id) return undefined;
-  const numericId = parseInt(id, 10);
-  if (isNaN(numericId)) return undefined;
-  return team.find((p) => p.id === numericId);
+export function usePersonBySlug(slug: string | undefined): TeamMember | undefined {
+  if (!slug) return undefined;
+  return team.find((p) => getNameSlug(p.name) === slug);
 }
 
 

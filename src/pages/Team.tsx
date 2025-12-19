@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTeam } from '../data/hooks';
+import { getNameSlug } from '../data/team';
 
 const Team = () => {
   const team = useTeam();
@@ -37,7 +38,7 @@ const Team = () => {
       <div className="team-grid">
         {team.map((member, index) => (
           <motion.div 
-            key={member.id}
+            key={member.name}
             className="team-card"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -54,7 +55,7 @@ const Team = () => {
             <h3>{member.name}</h3>
             <div className="member-role">{member.role}</div>
             <p>{member.bio}</p>
-            <Link to={`/person/${member.id}`} className="pixel-btn">{">>"} KNOW MORE</Link>
+            <Link to={`/person/${getNameSlug(member.name)}`} className="pixel-btn">{">>"} KNOW MORE</Link>
           </motion.div>
         ))}
       </div>

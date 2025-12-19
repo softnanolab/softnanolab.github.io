@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { usePersonById } from '../data/hooks';
+import { usePersonBySlug } from '../data/hooks';
+import { getNameSlug } from '../data/team';
 
 const personMarkdownFiles = import.meta.glob('../content/people/*.md', {
   as: 'raw',
@@ -9,7 +10,7 @@ const personMarkdownFiles = import.meta.glob('../content/people/*.md', {
 
 const PersonDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const person = usePersonById(id);
+  const person = usePersonBySlug(id);
 
   if (!person) {
     return (
@@ -67,9 +68,10 @@ const PersonDetail = () => {
     return elements;
   };
 
-  const getPersonContent = (personId: number | undefined): string | null => {
-    if (!personId) return null;
-    const path = `../content/people/${personId}.md`;
+  const getPersonContent = (personName: string | undefined): string | null => {
+    if (!personName) return null;
+    const slug = getNameSlug(personName);
+    const path = `../content/people/${slug}.md`;
     const file = personMarkdownFiles[path] as string | undefined;
     return file ?? null;
   };
@@ -105,9 +107,9 @@ const PersonDetail = () => {
         <p className="person-description-large">{person.bio}</p>
       </div>
 
-      {getPersonContent(person.id) && (
+      {getPersonContent(person.name) && (
         <div className="project-content">
-          {parseContent(getPersonContent(person.id) as string)}
+          {parseContent(getPersonContent(person.name) as string)}
         </div>
       )}
 
