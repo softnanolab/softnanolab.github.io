@@ -6,32 +6,40 @@ const Home = () => {
   const projects = useProjects();
   return (
     <>
-      <motion.section 
+      <motion.section
         className="news-box"
         initial={{ rotate: -1, scale: 0.9 }}
         animate={{ rotate: -1, scale: 1 }}
         whileHover={{ rotate: 0, scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 300 }}
+        transition={{ type: 'spring', stiffness: 300 }}
       >
         <div className="news-header">
           <span className="pixel-icon blink-fast">👾</span> LAB UPDATES
         </div>
         <div className="news-content">
-          <p><strong>2023-10-27:</strong> <span className="new-tag">NEW</span> New paper published in <em>Nature Nanotechnology</em> regarding self-assembling bagel structures!</p>
-          <p><strong>2023-09-15:</strong> Welcome to our new PhD students joining the group this fall.</p>
-          <p><strong>2023-08-01:</strong> SoftNanoLab receives grant for "Quantum Foam" research.</p>
+          <p>
+            <strong>2023-10-27:</strong> <span className="new-tag">NEW</span> New paper published in{' '}
+            <em>Nature Nanotechnology</em> regarding self-assembling bagel structures!
+          </p>
+          <p>
+            <strong>2023-09-15:</strong> Welcome to our new PhD students joining the group this
+            fall.
+          </p>
+          <p>
+            <strong>2023-08-01:</strong> SoftNanoLab receives grant for "Quantum Foam" research.
+          </p>
         </div>
       </motion.section>
 
       <h2 className="section-title">Research Projects</h2>
-      
+
       {projects.map((project) => (
-        <motion.div 
+        <motion.div
           key={project.id}
           className="project-card"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          whileHover={{ scale: 1.02, rotate: 1, boxShadow: "10px 10px 0px #E63946" }}
+          whileHover={{ scale: 1.02, rotate: 1, boxShadow: '10px 10px 0px #E63946' }}
         >
           <div className="project-icon-container">
             <div className={`space-invader-${project.iconType === 'invader1' ? '1' : '2'}`}></div>
@@ -39,23 +47,30 @@ const Home = () => {
           <div className="project-info">
             <h3>{project.title}</h3>
             <p className="project-desc">{project.description}</p>
-            <Link to={`/project/${project.id}`} className="pixel-btn">{">>"} VIEW PROJECT</Link>
+            <Link to={`/project/${project.id}`} className="pixel-btn">
+              {'>>'} VIEW PROJECT
+            </Link>
           </div>
         </motion.div>
       ))}
 
-      <motion.section 
+      <motion.section
         className="contact-section"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
         <p className="contact-text">
-          If you are an experimental biologist, chemist, ML engineer, or just want to chat, 
-          please drop an email to{' '}
-          <a href="mailto:stefano@ic.ac.uk" className="contact-link">Stefano</a> (stefano@ic.ac.uk) 
-          or{' '}
-          <a href="mailto:jakublala@gmail.com" className="contact-link">Jakub</a> (jakublala@gmail.com)
+          If you are an experimental biologist, chemist, ML engineer, or just want to chat, please
+          drop an email to{' '}
+          <a href="mailto:stefano@ic.ac.uk" className="contact-link">
+            Stefano
+          </a>{' '}
+          (stefano@ic.ac.uk) or{' '}
+          <a href="mailto:jakublala@gmail.com" className="contact-link">
+            Jakub
+          </a>{' '}
+          (jakublala@gmail.com)
         </p>
       </motion.section>
     </>

@@ -20,5 +20,3 @@ export function usePersonBySlug(slug: string | undefined): TeamMember | undefine
   if (!slug) return undefined;
   return team.find((p) => getNameSlug(p.name) === slug);
 }
-
-

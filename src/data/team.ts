@@ -54,14 +54,14 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Harsh Agrawal',
-    role: 'Master\'s Student',
+    role: "Master's Student",
     bio: '"Will wake up every sunday and refactor the entire codebase rather than writing tests"',
     avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
     image: '/harsh-agrawal.jpg',
   },
   {
     name: 'Jiayang Zhang',
-    role: 'Master\'s Student',
+    role: "Master's Student",
     bio: '"huggingface is never as good as hugging trees"',
     avatar: '\ud83c\udf32',
     image: '/jiyang-zhang.jpg',

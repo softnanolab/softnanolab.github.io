@@ -7,7 +7,7 @@ const Team = () => {
   const team = useTeam();
   return (
     <>
-      <motion.section 
+      <motion.section
         className="christmas-section"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,14 +18,14 @@ const Team = () => {
         </div>
         <div className="christmas-sock-left"></div>
         <div className="christmas-sock-right"></div>
-        
+
         <div className="christmas-content">
           <h2 className="christmas-title">🎄 Christmas Dinner 🎄</h2>
           <p className="christmas-date">16th December 2025</p>
           <div className="christmas-image-wrapper">
-            <img 
-              src="/christmas-dinner.jpg" 
-              alt="Team Christmas Dinner" 
+            <img
+              src="/christmas-dinner.jpg"
+              alt="Team Christmas Dinner"
               className="christmas-dinner-image"
             />
           </div>
@@ -37,12 +37,12 @@ const Team = () => {
 
       <div className="team-grid">
         {team.map((member, index) => (
-          <motion.div 
+          <motion.div
             key={member.name}
             className="team-card"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: (index * 0.1) + 0.5 }}
+            transition={{ delay: index * 0.1 + 0.5 }}
             whileHover={{ y: -10 }}
           >
             <div className="member-avatar">
@@ -55,7 +55,9 @@ const Team = () => {
             <h3>{member.name}</h3>
             <div className="member-role">{member.role}</div>
             <p>{member.bio}</p>
-            <Link to={`/person/${getNameSlug(member.name)}`} className="pixel-btn">{">>"} KNOW MORE</Link>
+            <Link to={`/person/${getNameSlug(member.name)}`} className="pixel-btn">
+              {'>>'} KNOW MORE
+            </Link>
           </motion.div>
         ))}
       </div>

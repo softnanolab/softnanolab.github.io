@@ -17,14 +17,16 @@ const PersonDetail = () => {
       <div className="project-not-found">
         <h2>Person Not Found</h2>
         <p>The person you're looking for doesn't exist.</p>
-        <Link to="/team" className="pixel-btn">← Back to Team</Link>
+        <Link to="/team" className="pixel-btn">
+          ← Back to Team
+        </Link>
       </div>
     );
   }
 
   // Simple markdown-like parsing for headers and paragraphs
   const parseContent = (content: string) => {
-    const lines = content.split('\n').filter(line => line.trim());
+    const lines = content.split('\n').filter((line) => line.trim());
     const elements: JSX.Element[] = [];
     let listItems: string[] = [];
     let listKey = 0;
@@ -34,7 +36,9 @@ const PersonDetail = () => {
         elements.push(
           <ul key={`list-${listKey++}`} className="blog-ul">
             {listItems.map((item, idx) => (
-              <li key={idx} className="blog-li">{item}</li>
+              <li key={idx} className="blog-li">
+                {item}
+              </li>
             ))}
           </ul>
         );
@@ -46,24 +50,44 @@ const PersonDetail = () => {
       const trimmed = line.trim();
       if (trimmed.startsWith('# ')) {
         flushList();
-        elements.push(<h1 key={index} className="blog-h1">{trimmed.substring(2)}</h1>);
+        elements.push(
+          <h1 key={index} className="blog-h1">
+            {trimmed.substring(2)}
+          </h1>
+        );
       } else if (trimmed.startsWith('## ')) {
         flushList();
-        elements.push(<h2 key={index} className="blog-h2">{trimmed.substring(3)}</h2>);
+        elements.push(
+          <h2 key={index} className="blog-h2">
+            {trimmed.substring(3)}
+          </h2>
+        );
       } else if (trimmed.startsWith('### ')) {
         flushList();
-        elements.push(<h3 key={index} className="blog-h3">{trimmed.substring(4)}</h3>);
+        elements.push(
+          <h3 key={index} className="blog-h3">
+            {trimmed.substring(4)}
+          </h3>
+        );
       } else if (trimmed.startsWith('- ')) {
         listItems.push(trimmed.substring(2));
       } else if (trimmed.startsWith('*') && trimmed.endsWith('*')) {
         flushList();
-        elements.push(<p key={index} className="blog-emphasis"><em>{trimmed.slice(1, -1)}</em></p>);
+        elements.push(
+          <p key={index} className="blog-emphasis">
+            <em>{trimmed.slice(1, -1)}</em>
+          </p>
+        );
       } else if (trimmed) {
         flushList();
-        elements.push(<p key={index} className="blog-p">{trimmed}</p>);
+        elements.push(
+          <p key={index} className="blog-p">
+            {trimmed}
+          </p>
+        );
       }
     });
-    
+
     flushList(); // Flush any remaining list items
     return elements;
   };
@@ -118,9 +142,9 @@ const PersonDetail = () => {
           <h2 className="social-links-title">Links</h2>
           <div className="social-links-grid">
             {person.socialLinks.googleScholar && (
-              <a 
-                href={person.socialLinks.googleScholar} 
-                target="_blank" 
+              <a
+                href={person.socialLinks.googleScholar}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
@@ -129,9 +153,9 @@ const PersonDetail = () => {
               </a>
             )}
             {person.socialLinks.x && (
-              <a 
-                href={person.socialLinks.x} 
-                target="_blank" 
+              <a
+                href={person.socialLinks.x}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
@@ -140,9 +164,9 @@ const PersonDetail = () => {
               </a>
             )}
             {person.socialLinks.website && (
-              <a 
-                href={person.socialLinks.website} 
-                target="_blank" 
+              <a
+                href={person.socialLinks.website}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
@@ -151,9 +175,9 @@ const PersonDetail = () => {
               </a>
             )}
             {person.socialLinks.linkedin && (
-              <a 
-                href={person.socialLinks.linkedin} 
-                target="_blank" 
+              <a
+                href={person.socialLinks.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
@@ -162,9 +186,9 @@ const PersonDetail = () => {
               </a>
             )}
             {person.socialLinks.github && (
-              <a 
-                href={person.socialLinks.github} 
-                target="_blank" 
+              <a
+                href={person.socialLinks.github}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
@@ -177,11 +201,12 @@ const PersonDetail = () => {
       )}
 
       <div className="project-footer">
-        <Link to="/team" className="pixel-btn">← Back to Team</Link>
+        <Link to="/team" className="pixel-btn">
+          ← Back to Team
+        </Link>
       </div>
     </motion.article>
   );
 };
 
 export default PersonDetail;
-

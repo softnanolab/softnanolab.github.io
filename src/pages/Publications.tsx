@@ -7,7 +7,7 @@ const Publications = () => {
       <h2 className="section-title">Publications</h2>
       <div className="publications-list">
         {publications.map((pub, index) => (
-          <motion.div 
+          <motion.div
             key={pub.id}
             className="pub-item"
             initial={{ x: -50, opacity: 0 }}
@@ -21,8 +21,12 @@ const Publications = () => {
                 {pub.isNew && <span className="new-tag">NEW</span>}
               </h4>
               <p className="pub-authors">{pub.authors}</p>
-              <p className="pub-journal">In <em>{pub.journal}</em></p>
-              <a href={pub.link} className="pixel-link">[PDF]</a>
+              <p className="pub-journal">
+                In <em>{pub.journal}</em>
+              </p>
+              <a href={pub.link} className="pixel-link">
+                [PDF]
+              </a>
             </div>
           </motion.div>
         ))}

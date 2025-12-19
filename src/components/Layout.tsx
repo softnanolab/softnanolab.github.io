@@ -16,18 +16,18 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="container">
         <header>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <motion.h1 
+            <motion.h1
               className="pixel-title"
-              whileHover={{ 
-                textShadow: "6px 6px 0px #93B0DA, -2px -2px 0px #C9E7FB",
-                scale: 1.02
+              whileHover={{
+                textShadow: '6px 6px 0px #93B0DA, -2px -2px 0px #C9E7FB',
+                scale: 1.02,
               }}
             >
               {site.title}
             </motion.h1>
           </Link>
           <p className="subtitle">{site.subtitle}</p>
-          
+
           <nav className="funky-nav">
             {site.navLinks.map((link) => (
               <Link key={link.path} to={link.path} className="nav-btn">
@@ -37,15 +37,11 @@ const Layout = ({ children }: LayoutProps) => {
           </nav>
 
           <div className="marquee-container">
-            <div className="marquee-text">
-              {site.marqueeText}
-            </div>
+            <div className="marquee-text">{site.marqueeText}</div>
           </div>
         </header>
 
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
 
         <footer>
           <p>{site.footerText}</p>

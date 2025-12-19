@@ -25,8 +25,7 @@ export const projects: Project[] = [
   {
     id: 'mint',
     title: 'MINT',
-    description:
-      'Creating a structurally aware protein language model specialized on multimers.',
+    description: 'Creating a structurally aware protein language model specialized on multimers.',
     type: 'ML',
     iconType: 'invader2',
     date: '2024-01-15',
