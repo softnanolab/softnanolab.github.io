@@ -23,14 +23,14 @@ export const projects: Project[] = [
     tags: ['Nanotechnology', 'Drug Delivery', 'Self-Assembly'],
   },
   {
-    id: 'quantum-foam',
-    title: 'Quantum Foam',
+    id: 'mint',
+    title: 'MINT',
     description:
-      'Studying the interactions of soft matter at the quantum level. Focus on stability and decoherence in biological environments.',
-    type: 'Physics',
+      'Creating a structurally aware protein language model specialized on multimers.',
+    type: 'ML',
     iconType: 'invader2',
-    date: '2023-08-01',
-    author: 'Dr. Freeman & Gordon B.',
-    tags: ['Quantum Physics', 'Soft Matter', 'Decoherence'],
+    date: '2024-01-15',
+    author: 'SoftNanoLab Team',
+    tags: ['Machine Learning', 'Protein Language Models', 'Multimers'],
   },
 ];
