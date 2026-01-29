@@ -24,6 +24,9 @@ export default [
         window: 'readonly',
         console: 'readonly',
         JSX: 'readonly',
+        fetch: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
       },
     },
     plugins: {

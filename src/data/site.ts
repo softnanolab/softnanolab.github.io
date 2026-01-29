@@ -5,8 +5,9 @@ export const site = {
     { path: '/', label: 'HOME', icon: '🏠' },
     { path: '/team', label: 'TEAM', icon: '👥' },
     { path: '/publications', label: 'PUBLICATIONS', icon: '📜' },
+    { path: '/outreach', label: 'POSTS', icon: '📢' },
   ],
   marqueeText:
-    '+++ LATEST: New paper in Nature Nanotech +++ PhD positions open for Fall 2025 +++ Seminar this Friday: Dr. Freeman on Quantum Foam +++',
+    '+++ Lisan Al Gaib - Jude Wells - got 5th place in the Adapty Bio Nippah Virus Hackathon using microsoft word +++',
   footerText: '\u00a9 2025 SoftNanoLab.',
 };

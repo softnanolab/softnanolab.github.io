@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ReactNode } from 'react';
 import { usePersonBySlug } from '../data/hooks';
 import { getNameSlug } from '../data/team';
 
@@ -100,6 +101,42 @@ const PersonDetail = () => {
     return file ?? null;
   };
 
+  // Helper function to parse markdown-style links in text
+  const parseBioLinks = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts: (string | ReactNode)[] = [];
+    let lastIndex = 0;
+    let match;
+    let key = 0;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      // Add the link
+      parts.push(
+        <a
+          key={key++}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bio-link"
+        >
+          {match[1]}
+        </a>
+      );
+      lastIndex = linkRegex.lastIndex;
+    }
+
+    // Add remaining text
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : [text];
+  };
+
   return (
     <motion.article
       className="project-detail"
@@ -128,7 +165,7 @@ const PersonDetail = () => {
       </div>
 
       <div className="person-description-box">
-        <p className="person-description-large">{person.bio}</p>
+        <p className="person-description-large">{parseBioLinks(person.bio)}</p>
       </div>
 
       {getPersonContent(person.name) && (

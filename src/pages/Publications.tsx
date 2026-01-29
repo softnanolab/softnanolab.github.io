@@ -1,5 +1,21 @@
 import { motion } from 'framer-motion';
-import { publications } from '../data/publications';
+import { Link } from 'react-router-dom';
+import { publications, PublicationAuthor } from '../data/publications';
+import { getNameSlug } from '../data/team';
+
+const renderAuthors = (authors: PublicationAuthor[]) => {
+  return authors.map((author) => (
+    <span key={author.name}>
+      {author.isTeamMember ? (
+        <Link to={`/person/${getNameSlug(author.name)}`} className="pub-author-link">
+          {author.name}
+        </Link>
+      ) : (
+        <span className="pub-author-box">{author.name}</span>
+      )}
+    </span>
+  ));
+};
 
 const Publications = () => {
   return (
@@ -16,16 +32,11 @@ const Publications = () => {
           >
             <div className="pub-year">{pub.year}</div>
             <div className="pub-content">
-              <h4>
-                {pub.title}
-                {pub.isNew && <span className="new-tag">NEW</span>}
-              </h4>
-              <p className="pub-authors">{pub.authors}</p>
-              <p className="pub-journal">
-                In <em>{pub.journal}</em>
-              </p>
-              <a href={pub.link} className="pixel-link">
-                [PDF]
+              <h4>{pub.title}</h4>
+              <p className="pub-journal">{pub.journal}</p>
+              <div className="pub-authors">{renderAuthors(pub.authors)}</div>
+              <a href={pub.link} target="_blank" rel="noopener noreferrer" className="pixel-link">
+                Read Article →
               </a>
             </div>
           </motion.div>
