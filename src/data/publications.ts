@@ -25,7 +25,7 @@ export const publications: Publication[] = [
       { name: 'Aayham Al-Saffar', isTeamMember: false },
     ],
     link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013774',
-    date: '2025-01-15',
+    date: '2024-12-03',
   },
   {
     id: 2,

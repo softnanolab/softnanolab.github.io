@@ -150,6 +150,22 @@ const Team = () => {
             <h3>{member.name}</h3>
             <div className="member-role">{member.role}</div>
             <p>{parseBioLinks(member.bio)}</p>
+            {member.email && (
+              <div className="member-email">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="email-icon"
+                >
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <a href={`mailto:${member.email}`} className="email-link">
+                  {member.email}
+                </a>
+              </div>
+            )}
             <SocialIcons socialLinks={member.socialLinks} />
           </motion.div>
         ))}

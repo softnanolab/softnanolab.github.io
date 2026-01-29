@@ -5,6 +5,12 @@ import { getNameSlug } from '../data/team';
 import { publications, PublicationAuthor } from '../data/publications';
 import { useEffect, useState } from 'react';
 
+const CalendarIcon = () => (
+  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="calendar-icon">
+    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
+  </svg>
+);
+
 const renderAuthors = (authors: PublicationAuthor[]) => {
   return authors.map((author) => (
     <span key={author.name}>
@@ -131,7 +137,11 @@ const Home = () => {
         </div>
         <div className="news-content">
           <p>
-            <strong>Dec 22, 2024:</strong> <span className="new-tag">NEW</span> Jude Wells published{' '}
+            <strong className="news-date">
+              <CalendarIcon />
+              Dec 22, 2024:
+            </strong>{' '}
+            <span className="new-tag">NEW</span> Jude Wells published{' '}
             <a
               href="https://x.com/_judewells/status/2003055862953512964"
               target="_blank"
@@ -144,7 +154,11 @@ const Home = () => {
             predict fitness.
           </p>
           <p>
-            <strong>Dec 11, 2024:</strong> Jakub co-organized{' '}
+            <strong className="news-date">
+              <CalendarIcon />
+              Dec 11, 2024:
+            </strong>{' '}
+            Jakub co-organized{' '}
             <a
               href="https://x.com/jakublala/status/1999045952343065076"
               target="_blank"
@@ -175,8 +189,22 @@ const Home = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: index * 0.1 + 0.3 }}
           >
-            <div className="pub-year">{pub.year}</div>
+            <div className="pub-icon">
+              {pub.title.includes('BAGEL') ? (
+                <img src="/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo-pub" />
+              ) : (
+                <div className="pub-year-badge">{pub.year}</div>
+              )}
+            </div>
             <div className="pub-content">
+              <div className="pub-year-label">
+                <CalendarIcon />
+                {new Date(pub.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </div>
               <h4>{pub.title}</h4>
               <p className="pub-journal">{pub.journal}</p>
               <div className="pub-authors">{renderAuthors(pub.authors)}</div>
@@ -211,7 +239,10 @@ const Home = () => {
       >
         <div className="opensource-item">
           <div className="opensource-header">
-            <h4>BAGEL: Open Source Protein Engineering Framework</h4>
+            <div className="opensource-title-with-logo">
+              <img src="/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo" />
+              <h4>BAGEL: Open Source Protein Engineering Framework</h4>
+            </div>
             <GitHubStats owner="softnanolab" repo="bagel" />
           </div>
           <a

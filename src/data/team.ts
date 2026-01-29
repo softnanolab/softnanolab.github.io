@@ -12,6 +12,7 @@ export interface TeamMember {
   bio: string;
   avatar: string; // Can be emoji or image URL
   image?: string; // Optional image URL for photo
+  email?: string; // Optional email address
   socialLinks?: SocialLinks; // Optional social media links
 }
 
@@ -44,6 +45,7 @@ export const team: TeamMember[] = [
     bio: 'Encode AI for Science Research Fellow working on machine learning methods for protein design. Most recent project is [ProFam](https://www.biorxiv.org/content/10.64898/2025.12.19.695431v1), an autoregressive protein family language model for functional protein design.',
     avatar: '\ud83c\udfb6',
     image: '/jude-wells.jpg',
+    email: 'jude.wells@encode.ai',
     socialLinks: {
       github: 'https://github.com/judeWells/',
       googleScholar: 'https://scholar.google.com/citations?user=6otdJFgAAAAJ&hl=en&oi=ao',
@@ -57,6 +59,7 @@ export const team: TeamMember[] = [
     bio: 'PhD student researching computational methods for protein engineering and design.',
     avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
     image: '/jakub-lala.jpg',
+    email: 'jakublala@gmail.com',
     socialLinks: {
       github: 'https://github.com/jakublala',
       googleScholar: 'https://scholar.google.com/citations?user=Syk0xGgAAAAJ&hl=en',
@@ -71,6 +74,7 @@ export const team: TeamMember[] = [
     bio: "Visiting student working on flow matching and stochastic interpolants to improve structure prediction with a focus on protein binder design. Holds a Bachelor's in Physics and a Master's in Biophysics",
     avatar: '\ud83e\uddec',
     image: '/erik.png',
+    email: 'erik.baldauf@imperial.ac.uk',
     socialLinks: {
       github: 'https://github.com/EMB-Git',
       linkedin: 'https://www.linkedin.com/in/erik-baldauf-970893292',
@@ -82,6 +86,7 @@ export const team: TeamMember[] = [
     bio: 'Masters student training Protein Language Models specialized for multimers. Broadly interested in structure prediction and protein design.',
     avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
     image: '/harsh-agrawal.jpg',
+    email: 'harshagrawal.1312@gmail.com',
     socialLinks: {
       github: 'https://github.com/harshagrawal13',
       linkedin: 'https://www.linkedin.com/in/harshag1312/',
@@ -95,6 +100,7 @@ export const team: TeamMember[] = [
     bio: 'Using BAGEL to investigate de novo enzyme design by imposing catalytic triads onto the surfaces of non-enzymatic protein scaffolds.',
     avatar: '\ud83c\udf32',
     image: '/jiyang-zhang.jpg',
+    email: 'jiayangzhang@gmail.com',
     socialLinks: {
       github: 'https://github.com/jiayang-zhang',
       googleScholar: 'https://scholar.google.com/citations?user=DKtXpJcAAAAJ&hl=en',
