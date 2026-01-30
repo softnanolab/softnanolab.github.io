@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { projects } from './projects';
-import { team, getNameSlug } from './team';
+import { team, pastMembers, getNameSlug } from './team';
 import type { Project } from './projects';
 import type { TeamMember } from './team';
 
@@ -26,7 +26,8 @@ export function useTeam(): TeamMember[] {
 
 export function usePersonBySlug(slug: string | undefined): TeamMember | undefined {
   if (!slug) return undefined;
-  return team.find((p) => getNameSlug(p.name) === slug);
+  const allMembers = [...team, ...pastMembers];
+  return allMembers.find((p) => getNameSlug(p.name) === slug);
 }
 
 export function useGitHubRepoStats(owner: string, repo: string): GitHubRepoStats {

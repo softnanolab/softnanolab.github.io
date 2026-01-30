@@ -136,12 +136,41 @@ const Home = () => {
           <span className="pixel-icon blink-fast">👾</span> LAB UPDATES
         </div>
         <div className="news-content">
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '12px 0' }}>
+            <a
+              href="https://x.com/_judewells/status/2003055862953512964"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                width: '60%',
+                transform: 'rotate(-1.5deg)',
+                transition: 'transform 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'rotate(0deg)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'rotate(-1.5deg)')}
+            >
+              <video
+                src="/media/profam.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="news-media"
+                style={{ width: '100%', borderRadius: '4px', display: 'block' }}
+              />
+            </a>
+          </div>
           <p>
             <strong className="news-date">
               <CalendarIcon />
               Dec 22, 2024:
             </strong>{' '}
-            <span className="new-tag">NEW</span> Jude Wells published{' '}
+            <span className="new-tag">NEW</span>{' '}
+            <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
+              Jude Wells
+            </Link>{' '}
+            published{' '}
             <a
               href="https://x.com/_judewells/status/2003055862953512964"
               target="_blank"
@@ -153,12 +182,37 @@ const Home = () => {
             , a protein family language model designed to generate functional protein variants and
             predict fitness.
           </p>
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '12px 0' }}>
+            <a
+              href="https://x.com/jakublala/status/1999045952343065076"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                width: '60%',
+                transform: 'rotate(1.5deg)',
+                transition: 'transform 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'rotate(0deg)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'rotate(1.5deg)')}
+            >
+              <img
+                src="/media/in_silico.jpeg"
+                alt="In-Silico #3 Event"
+                className="news-media"
+                style={{ width: '100%', borderRadius: '4px', display: 'block' }}
+              />
+            </a>
+          </div>
           <p>
             <strong className="news-date">
               <CalendarIcon />
               Dec 11, 2024:
             </strong>{' '}
-            Jakub co-organized{' '}
+            <Link to={`/person/${getNameSlug('Jakub Lala')}`} className="news-link">
+              Jakub
+            </Link>{' '}
+            co-organized{' '}
             <a
               href="https://x.com/jakublala/status/1999045952343065076"
               target="_blank"
@@ -167,11 +221,22 @@ const Home = () => {
             >
               In-Silico #3
             </a>{' '}
-            with Gabrielle Corso (Boltz), Charlie Harris, Callum Dysdale, and Hiruna Cretu as
+            with Gabriele Corso (Boltz), Charlie Harris, Callum Dysdale, and Hiruna Cretu as
             speakers.
           </p>
         </div>
       </motion.section>
+
+      <motion.div
+        className="view-more-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <Link to="/updates" className="pixel-btn view-more-btn">
+          {'>> '} VIEW ALL UPDATES
+        </Link>
+      </motion.div>
 
       <h2 className="section-title">Publications</h2>
 
@@ -191,7 +256,7 @@ const Home = () => {
           >
             <div className="pub-icon">
               {pub.title.includes('BAGEL') ? (
-                <img src="/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo-pub" />
+                <img src="/logos/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo-pub" />
               ) : (
                 <div className="pub-year-badge">{pub.year}</div>
               )}
@@ -216,18 +281,16 @@ const Home = () => {
         ))}
       </motion.div>
 
-      {publications.length > 2 && (
-        <motion.div
-          className="view-more-container"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <Link to="/publications" className="pixel-btn view-more-btn">
-            {'>> '} VIEW ALL PUBLICATIONS
-          </Link>
-        </motion.div>
-      )}
+      <motion.div
+        className="view-more-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <Link to="/publications" className="pixel-btn view-more-btn">
+          {'>> '} VIEW ALL PUBLICATIONS
+        </Link>
+      </motion.div>
 
       <h2 className="section-title">Open Source</h2>
 
@@ -240,7 +303,7 @@ const Home = () => {
         <div className="opensource-item">
           <div className="opensource-header">
             <div className="opensource-title-with-logo">
-              <img src="/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo" />
+              <img src="/logos/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo" />
               <h4>BAGEL: Open Source Protein Engineering Framework</h4>
             </div>
             <GitHubStats owner="softnanolab" repo="bagel" />
@@ -271,6 +334,17 @@ const Home = () => {
         </div>
       </motion.div>
 
+      <motion.div
+        className="view-more-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <Link to="/opensource" className="pixel-btn view-more-btn">
+          {'>> '} VIEW ALL OPEN SOURCE
+        </Link>
+      </motion.div>
+
       <motion.section
         className="contact-section"
         initial={{ opacity: 0, y: 20 }}
@@ -280,13 +354,16 @@ const Home = () => {
         <p className="contact-text">
           If you are an experimental biologist, chemist, ML engineer, or just want to chat, please
           drop an email to{' '}
-          <a href="mailto:stefano@ic.ac.uk" className="contact-link">
+          <Link
+            to={`/person/${getNameSlug('Dr. Stefano Angioletti-Uberti')}`}
+            className="contact-link"
+          >
             Stefano
-          </a>{' '}
-          (stefano@ic.ac.uk) or{' '}
-          <a href="mailto:jakublala@gmail.com" className="contact-link">
+          </Link>{' '}
+          (s.angioletti-uberti@imperial.ac.uk) or{' '}
+          <Link to={`/person/${getNameSlug('Jakub Lala')}`} className="contact-link">
             Jakub
-          </a>{' '}
+          </Link>{' '}
           (jakublala@gmail.com)
         </p>
       </motion.section>
