@@ -30,7 +30,8 @@ export const team: TeamMember[] = [
     role: 'Lab Lead',
     bio: 'Dr. Stefano Angioletti-Uberti is an Imperial College PI and biotech entrepreneur specializing in nanobiotechnology and multivalent selectivity for gene delivery. He is deeply interested in the computational modelling of proteins and shares a deep love for immunobiology.',
     avatar: '\ud83d\udc68\u200d\ud83e\uddd1\u200d\ud83c\udf93',
-    image: '/stefano-angioletti-uberti.jpeg',
+    image: '/team/stefano-angioletti-uberti.jpeg',
+    email: 's.angioletti-uberti@imperial.ac.uk',
     socialLinks: {
       googleScholar: 'https://scholar.google.co.uk/citations?user=l17sXL0AAAAJ&hl=en',
       website: 'https://profiles.imperial.ac.uk/s.angioletti-uberti',
@@ -44,7 +45,7 @@ export const team: TeamMember[] = [
     role: 'Research Fellow',
     bio: 'Encode AI for Science Research Fellow working on machine learning methods for protein design. Most recent project is [ProFam](https://www.biorxiv.org/content/10.64898/2025.12.19.695431v1), an autoregressive protein family language model for functional protein design.',
     avatar: '\ud83c\udfb6',
-    image: '/jude-wells.jpg',
+    image: '/team/jude-wells.jpg',
     email: 'jude.wells@encode.ai',
     socialLinks: {
       github: 'https://github.com/judeWells/',
@@ -58,7 +59,7 @@ export const team: TeamMember[] = [
     role: 'PhD Student',
     bio: 'PhD student researching computational methods for protein engineering and design.',
     avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
-    image: '/jakub-lala.jpg',
+    image: '/team/jakub-lala.jpg',
     email: 'jakublala@gmail.com',
     socialLinks: {
       github: 'https://github.com/jakublala',
@@ -73,7 +74,7 @@ export const team: TeamMember[] = [
     role: 'Visiting Researcher',
     bio: "Visiting student working on flow matching and stochastic interpolants to improve structure prediction with a focus on protein binder design. Holds a Bachelor's in Physics and a Master's in Biophysics",
     avatar: '\ud83e\uddec',
-    image: '/erik.png',
+    image: '/team/erik.png',
     email: 'erik.baldauf@imperial.ac.uk',
     socialLinks: {
       github: 'https://github.com/EMB-Git',
@@ -85,7 +86,7 @@ export const team: TeamMember[] = [
     role: "Master's Student",
     bio: 'Masters student training Protein Language Models specialized for multimers. Broadly interested in structure prediction and protein design.',
     avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
-    image: '/harsh-agrawal.jpg',
+    image: '/team/harsh-agrawal.jpg',
     email: 'harshagrawal.1312@gmail.com',
     socialLinks: {
       github: 'https://github.com/harshagrawal13',
@@ -99,12 +100,43 @@ export const team: TeamMember[] = [
     role: "Master's Student",
     bio: 'Using BAGEL to investigate de novo enzyme design by imposing catalytic triads onto the surfaces of non-enzymatic protein scaffolds.',
     avatar: '\ud83c\udf32',
-    image: '/jiyang-zhang.jpg',
+    image: '/team/jiyang-zhang.jpg',
     email: 'jiayangzhang@gmail.com',
     socialLinks: {
       github: 'https://github.com/jiayang-zhang',
       googleScholar: 'https://scholar.google.com/citations?user=DKtXpJcAAAAJ&hl=en',
       website: 'https://jiayangzh.com/',
+    },
+  },
+  {
+    name: 'Toby Hallett',
+    role: 'Undergraduate Student',
+    bio: 'Undergraduate student in Materials Science and Engineering. Recipient of the Rolls Royce / Armourers & Brasiers First Year Undergraduate Award (2024).',
+    avatar: '🎓',
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/toby-hallett-0684a5329/?originalSubdomain=uk',
+    },
+  },
+];
+
+export const pastMembers: TeamMember[] = [
+  {
+    name: 'Aayham Al-Saffar',
+    role: 'Former Undergraduate Student',
+    bio: 'Materials Science and Engineering undergraduate who co-authored the [BAGEL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013774) protein engineering framework. Created molecular simulation tools for materials science education at Imperial.',
+    avatar: '🔬',
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/ayhamalsaffar/?originalSubdomain=uk',
+      github: 'https://github.com/AyhamSaffar',
+    },
+  },
+  {
+    name: 'Arnav Cheruku',
+    role: 'Former Student',
+    bio: 'Former member associated with computational biology research at Imperial College London.',
+    avatar: '💻',
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/arnav-cheruku-a616671b3/?originalSubdomain=uk',
     },
   },
 ];

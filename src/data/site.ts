@@ -5,6 +5,8 @@ export const site = {
     { path: '/', label: 'HOME', icon: '🏠' },
     { path: '/team', label: 'TEAM', icon: '👥' },
     { path: '/publications', label: 'PUBLICATIONS', icon: '📜' },
+    { path: '/updates', label: 'LAB UPDATES', icon: '📰' },
+    { path: '/opensource', label: 'OPEN SOURCE', icon: '💻' },
     { path: '/outreach', label: 'POSTS', icon: '📢' },
   ],
   marqueeText:

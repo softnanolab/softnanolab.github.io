@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import { useTeam } from '../data/hooks';
-import { SocialLinks } from '../data/team';
+import { SocialLinks, pastMembers } from '../data/team';
 
 const GithubIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -100,6 +100,7 @@ const parseBioLinks = (text: string) => {
 
 const Team = () => {
   const team = useTeam();
+
   return (
     <>
       <motion.section
@@ -107,19 +108,18 @@ const Team = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
+        style={{ padding: '1rem 2rem' }}
       >
         <div className="christmas-hat-container">
           <div className="pixel-christmas-hat"></div>
         </div>
-        <div className="christmas-sock-left"></div>
-        <div className="christmas-sock-right"></div>
 
         <div className="christmas-content">
           <h2 className="christmas-title">🎄 Christmas Dinner 🎄</h2>
           <p className="christmas-date">16th December 2025</p>
           <div className="christmas-image-wrapper">
             <img
-              src="/christmas-dinner.jpg"
+              src="/media/christmas-dinner.jpg"
               alt="Team Christmas Dinner"
               className="christmas-dinner-image"
             />
@@ -161,9 +161,51 @@ const Team = () => {
                 >
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
-                <a href={`mailto:${member.email}`} className="email-link">
-                  {member.email}
-                </a>
+                <span className="email-text">{member.email}</span>
+              </div>
+            )}
+            <SocialIcons socialLinks={member.socialLinks} />
+          </motion.div>
+        ))}
+      </div>
+
+      <h2 className="section-title" style={{ marginTop: '60px' }}>
+        Past Members
+      </h2>
+
+      <div className="team-grid">
+        {pastMembers.map((member, index) => (
+          <motion.div
+            key={member.name}
+            className="team-card"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: index * 0.1 + 0.5 }}
+            whileHover={{ y: -10 }}
+            style={{ opacity: 0.9 }}
+          >
+            <div className="member-avatar">
+              {member.image ? (
+                <img src={member.image} alt={member.name} className="member-photo" />
+              ) : (
+                member.avatar
+              )}
+            </div>
+            <h3>{member.name}</h3>
+            <div className="member-role">{member.role}</div>
+            <p>{parseBioLinks(member.bio)}</p>
+            {member.email && (
+              <div className="member-email">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="email-icon"
+                >
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <span className="email-text">{member.email}</span>
               </div>
             )}
             <SocialIcons socialLinks={member.socialLinks} />

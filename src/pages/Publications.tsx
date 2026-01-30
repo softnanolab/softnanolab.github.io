@@ -38,7 +38,7 @@ const Publications = () => {
           >
             <div className="pub-icon">
               {pub.title.includes('BAGEL') ? (
-                <img src="/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo-pub" />
+                <img src="/logos/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo-pub" />
               ) : (
                 <div className="pub-year-badge">{pub.year}</div>
               )}

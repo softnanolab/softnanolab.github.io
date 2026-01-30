@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Team from './pages/Team';
 import Publications from './pages/Publications';
 import Outreach from './pages/Outreach';
+import Updates from './pages/Updates';
+import OpenSource from './pages/OpenSource';
 import ProjectDetail from './pages/ProjectDetail';
 import PersonDetail from './pages/PersonDetail';
 import './index.css';
@@ -18,6 +20,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Team />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/updates" element={<Updates />} />
+          <Route path="/opensource" element={<OpenSource />} />
           <Route path="/outreach" element={<Outreach />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/person/:id" element={<PersonDetail />} />

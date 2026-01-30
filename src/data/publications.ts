@@ -22,7 +22,7 @@ export const publications: Publication[] = [
     authors: [
       { name: 'Jakub Lala', isTeamMember: true },
       { name: 'Dr. Stefano Angioletti-Uberti', isTeamMember: true },
-      { name: 'Aayham Al-Saffar', isTeamMember: false },
+      { name: 'Aayham Al-Saffar', isTeamMember: true },
     ],
     link: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013774',
     date: '2024-12-03',
