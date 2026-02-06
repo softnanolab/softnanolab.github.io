@@ -113,7 +113,7 @@ export const team: TeamMember[] = [
     role: 'Incoming PhD Student',
     bio: 'Toby is interested in both computational and experimental protein engineering. Previously, he was an undergraduate student in the Department of Materials at Imperial College, receiving the Rolls Royce / Armourers and Brasiers award for his performance in his studies.',
     avatar: '🎓',
-    image: '/team/toby-hallett.jpg',
+    image: '/team/toby-hallett.png',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/toby-hallett-0684a5329/?originalSubdomain=uk',
     },
