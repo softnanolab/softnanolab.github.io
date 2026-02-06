@@ -110,8 +110,8 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Toby Hallett',
-    role: 'Undergraduate Student',
-    bio: 'Undergraduate student in Materials Science and Engineering. Recipient of the Rolls Royce / Armourers & Brasiers First Year Undergraduate Award (2024).',
+    role: 'Incoming PhD Student',
+    bio: 'Toby is interested in both computational and experimental protein engineering. Previously, he was an undergraduate student in the Department of Materials at Imperial College, receiving the Rolls Royce / Armourers and Brasiers award for his performance in his studies.',
     avatar: '🎓',
     image: '/team/toby-hallett.jpg',
     socialLinks: {
