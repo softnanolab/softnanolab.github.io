@@ -115,6 +115,7 @@ export const team: TeamMember[] = [
     avatar: '🎓',
     image: '/team/toby-hallett.png',
     socialLinks: {
+      github: 'https://github.com/TobyH9',
       linkedin: 'https://www.linkedin.com/in/toby-hallett-0684a5329/?originalSubdomain=uk',
     },
   },
