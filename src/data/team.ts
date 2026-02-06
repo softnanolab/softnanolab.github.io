@@ -113,6 +113,7 @@ export const team: TeamMember[] = [
     role: 'Undergraduate Student',
     bio: 'Undergraduate student in Materials Science and Engineering. Recipient of the Rolls Royce / Armourers & Brasiers First Year Undergraduate Award (2024).',
     avatar: '🎓',
+    image: '/team/toby-hallett.jpg',
     socialLinks: {
       linkedin: 'https://www.linkedin.com/in/toby-hallett-0684a5329/?originalSubdomain=uk',
     },
