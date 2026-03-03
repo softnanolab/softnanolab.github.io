@@ -12,6 +12,15 @@ const renderAuthors = (authors: PublicationAuthor[]) => {
         <Link to={`/person/${getNameSlug(author.name)}`} className="pub-author-link">
           {author.name}
         </Link>
+      ) : author.externalLink ? (
+        <a
+          href={author.externalLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pub-author-link"
+        >
+          {author.name}
+        </a>
       ) : (
         <span className="pub-author-box">{author.name}</span>
       )}

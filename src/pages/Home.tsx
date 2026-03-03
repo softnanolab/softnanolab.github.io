@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { useGitHubRepoStats } from '../data/hooks';
 import { getNameSlug } from '../data/team';
 import { publications, PublicationAuthor } from '../data/publications';
+import { openSourceProjects } from '../data/opensource';
 import { labUpdates } from '../data/updates';
 import { useEffect, useState } from 'react';
 import CalendarIcon from '../components/CalendarIcon';
 import UpdateEntry from '../components/UpdateEntry';
+
+const visibleProjects = openSourceProjects.filter((project) => !project.hidden);
 
 const renderAuthors = (authors: PublicationAuthor[]) => {
   return authors.map((author) => (
@@ -15,6 +18,15 @@ const renderAuthors = (authors: PublicationAuthor[]) => {
         <Link to={`/person/${getNameSlug(author.name)}`} className="pub-author-link">
           {author.name}
         </Link>
+      ) : author.externalLink ? (
+        <a
+          href={author.externalLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pub-author-link"
+        >
+          {author.name}
+        </a>
       ) : (
         <span className="pub-author-box">{author.name}</span>
       )}
@@ -212,38 +224,30 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <div className="opensource-item">
-          <div className="opensource-header">
-            <div className="opensource-title-with-logo">
-              <img src="/logos/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo" />
-              <h4>BAGEL: Open Source Protein Engineering Framework</h4>
+        {visibleProjects.slice(0, 3).map((project) => (
+          <div key={project.id} className="opensource-item">
+            <div className="opensource-header">
+              {project.logo ? (
+                <div className="opensource-title-with-logo">
+                  <img src={project.logo} alt={`${project.name} Logo`} className="bagel-logo" />
+                  <h4>{project.name}</h4>
+                </div>
+              ) : (
+                <h4>{project.name}</h4>
+              )}
+              <GitHubStats owner={project.githubOwner} repo={project.githubRepo} />
             </div>
-            <GitHubStats owner="softnanolab" repo="bagel" />
+            <p>{project.description}</p>
+            <a
+              href={`https://github.com/${project.githubOwner}/${project.githubRepo}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pixel-link"
+            >
+              View on GitHub →
+            </a>
           </div>
-          <a
-            href="https://github.com/softnanolab/bagel"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pixel-link"
-          >
-            View on GitHub →
-          </a>
-        </div>
-
-        <div className="opensource-item">
-          <div className="opensource-header">
-            <h4>boileroom: a unified serverless platform for protein models</h4>
-            <GitHubStats owner="softnanolab" repo="boileroom" />
-          </div>
-          <a
-            href="https://github.com/softnanolab/boileroom"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pixel-link"
-          >
-            View on GitHub →
-          </a>
-        </div>
+        ))}
       </motion.div>
 
       <motion.div

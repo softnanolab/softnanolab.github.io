@@ -5,6 +5,7 @@ export interface OpenSourceProject {
   githubOwner: string;
   githubRepo: string;
   logo?: string;
+  hidden?: boolean;
 }
 
 export const openSourceProjects: OpenSourceProject[] = [
@@ -23,5 +24,13 @@ export const openSourceProjects: OpenSourceProject[] = [
       'Unified serverless platform for deploying and running protein structure prediction models',
     githubOwner: 'softnanolab',
     githubRepo: 'boileroom',
+  },
+  {
+    id: 'protein-monte-carlo',
+    name: 'Protein-MC',
+    description: 'Minimal Metropolis Monte Carlo optimiser for protein sequence design',
+    githubOwner: 'AminoAnalytica',
+    githubRepo: 'protein-monte-carlo',
+    hidden: true,
   },
 ];

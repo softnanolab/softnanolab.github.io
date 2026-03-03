@@ -1,6 +1,7 @@
 export interface PublicationAuthor {
   name: string;
   isTeamMember: boolean;
+  externalLink?: string;
 }
 
 export interface Publication {
@@ -14,6 +15,25 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
+  {
+    id: 3,
+    year: '2025',
+    title: 'Mind the Gap: An Embedding Guide to Safely Travel in Sequence Space',
+    journal: 'bioRxiv',
+    authors: [
+      {
+        name: 'Adam Wu',
+        isTeamMember: false,
+        externalLink: 'https://www.linkedin.com/in/akhwu/',
+      },
+      { name: 'Quentin Trolliet', isTeamMember: true },
+      { name: 'Abhinav Rajendran', isTeamMember: true },
+      { name: 'Jakub Lála', isTeamMember: true },
+      { name: 'Dr. Stefano Angioletti-Uberti', isTeamMember: true },
+    ],
+    link: 'https://www.biorxiv.org/content/10.1101/2025.06.19.660524v3',
+    date: '2025-06-19',
+  },
   {
     id: 1,
     year: '2025',

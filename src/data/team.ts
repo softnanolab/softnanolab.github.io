@@ -125,8 +125,26 @@ export const team: TeamMember[] = [
 
 export const pastMembers: TeamMember[] = [
   {
+    name: 'Quentin Trolliet',
+    role: "Former Master's Student",
+    bio: 'Materials student at Imperial who contributed to embedding-based protein sequence design work, including the standalone Protein-MC project and the LaminaBio iGEM team.',
+    avatar: '🧪',
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/qticl/',
+    },
+  },
+  {
+    name: 'Abhinav Rajendran',
+    role: "Former Master's Student",
+    bio: 'Materials student at Imperial who worked on computational protein engineering and later co-founded [AminoAnalytica](https://aminoanalytica.com/) to build AI tools for protein design.',
+    avatar: '🧬',
+    socialLinks: {
+      linkedin: 'https://www.linkedin.com/in/abhirajen/',
+    },
+  },
+  {
     name: 'Ayham Al-Saffar',
-    role: 'Former Undergraduate Student',
+    role: "Former Master's Student",
     bio: 'Materials Science and Engineering undergraduate who co-authored the [BAGEL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013774) protein engineering framework. Created molecular simulation tools for materials science education at Imperial.',
     avatar: '🔬',
     socialLinks: {
@@ -136,7 +154,7 @@ export const pastMembers: TeamMember[] = [
   },
   {
     name: 'Arnav Cheruku',
-    role: 'Former Student',
+    role: "Former Master's Student",
     bio: 'Former member associated with computational biology research at Imperial College London.',
     avatar: '💻',
     socialLinks: {
