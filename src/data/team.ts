@@ -76,7 +76,7 @@ export const team: TeamMember[] = [
     role: 'Visiting Researcher',
     bio: "Visiting student working on flow matching and stochastic interpolants to improve structure prediction with a focus on protein binder design. Holds a Bachelor's in Physics and a Master's in Biophysics",
     avatar: '\ud83e\uddec',
-    image: '/team/erik.png',
+    image: '/team/erik.jpg',
     email: 'erik.baldauf@imperial.ac.uk',
     socialLinks: {
       github: 'https://github.com/EMB-Git',
@@ -115,7 +115,7 @@ export const team: TeamMember[] = [
     role: 'Incoming PhD Student',
     bio: 'Toby is interested in both computational and experimental protein engineering. Previously, he was an undergraduate student in the Department of Materials at Imperial College, receiving the Rolls Royce / Armourers and Brasiers award for his performance in his studies.',
     avatar: '🎓',
-    image: '/team/toby-hallett.png',
+    image: '/team/toby-hallett.jpg',
     socialLinks: {
       github: 'https://github.com/TobyH9',
       linkedin: 'https://www.linkedin.com/in/toby-hallett-0684a5329/?originalSubdomain=uk',
