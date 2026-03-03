@@ -1,0 +1,169 @@
+import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { getNameSlug } from './team';
+
+export interface LabUpdate {
+  id: string;
+  date: string;
+  renderContent: () => ReactNode;
+  media?: {
+    type: 'image' | 'video';
+    src: string;
+    alt?: string;
+    link?: string;
+  };
+  isNew?: boolean;
+}
+
+export const labUpdates: LabUpdate[] = [
+  {
+    id: 'berlin-bio-ai-hackathon-feb-2026',
+    date: '2026-02-28',
+    media: {
+      type: 'image',
+      src: '/media/berlin_bio_ai_hackathon.jpeg',
+      alt: 'Berlin Bio x AI Hackathon - Team In Silico presenting ProFam-DEvo',
+      link: 'https://www.biohack.berlin/',
+    },
+    isNew: true,
+    renderContent: () => (
+      <>
+        <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
+          Jude Wells
+        </Link>{' '}
+        and team won the protein binder design track at the{' '}
+        <a
+          href="https://www.biohack.berlin/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Berlin Bio × AI Hackathon
+        </a>{' '}
+        with ProFam-DEvo, a new method for designing protein binders using directed evolution guided
+        by the{' '}
+        <a
+          href="https://www.biorxiv.org/content/10.64898/2025.12.19.695431v1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          ProFam language model
+        </a>
+        . The team won $10k in Adaptyv Bio Foundry credits to experimentally validate their designs.
+      </>
+    ),
+  },
+  {
+    id: 'in-silico-4-feb-2026',
+    date: '2026-02-25',
+    media: {
+      type: 'image',
+      src: '/media/in_silico_004.png',
+      alt: 'In Silico #004 Event',
+      link: 'https://luma.com/gb3uso7t',
+    },
+    isNew: true,
+    renderContent: () => (
+      <>
+        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+          Jakub
+        </Link>{' '}
+        co-organized{' '}
+        <a
+          href="https://luma.com/gb3uso7t"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          In Silico #004
+        </a>{' '}
+        with talks from McClain Thiel, Patrick Kidger, Katarina Petrovic, and Ivan Jayapurna on AI
+        for biology.
+      </>
+    ),
+  },
+  {
+    id: 'foresight-fellow-jan-2026',
+    date: '2026-01-22',
+    media: {
+      type: 'image',
+      src: '/media/foresight_fellow_jakub.png',
+      alt: 'Jakub Lála - Foresight Institute 2026 Fellow',
+      link: 'https://foresight.org/fellowship/',
+    },
+    isNew: true,
+    renderContent: () => (
+      <>
+        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+          Jakub
+        </Link>{' '}
+        was selected as a 2026{' '}
+        <a
+          href="https://foresight.org/fellowship/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Foresight Institute Fellow
+        </a>{' '}
+        in Longevity Biotechnology, joining a cohort of early-career scientists advancing
+        transformative science and technology.
+      </>
+    ),
+  },
+  {
+    id: 'profam-dec-2025',
+    date: '2025-12-22',
+    media: {
+      type: 'video',
+      src: '/media/profam.mp4',
+      link: 'https://x.com/_judewells/status/2003055862953512964',
+    },
+    renderContent: () => (
+      <>
+        <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
+          Jude Wells
+        </Link>{' '}
+        published{' '}
+        <a
+          href="https://x.com/_judewells/status/2003055862953512964"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          ProFam
+        </a>
+        , a protein family language model designed to generate functional protein variants and
+        predict fitness.
+      </>
+    ),
+  },
+  {
+    id: 'in-silico-3-dec-2025',
+    date: '2025-12-11',
+    media: {
+      type: 'image',
+      src: '/media/in_silico.jpeg',
+      alt: 'In-Silico #3 Event',
+      link: 'https://x.com/jakublala/status/1999045952343065076',
+    },
+    renderContent: () => (
+      <>
+        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+          Jakub
+        </Link>{' '}
+        co-organized{' '}
+        <a
+          href="https://x.com/jakublala/status/1999045952343065076"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          In-Silico #3
+        </a>{' '}
+        with Gabriele Corso (Boltz), Charlie Harris, Callum Dysdale, and Miruna Cretu as speakers.
+      </>
+    ),
+  },
+];

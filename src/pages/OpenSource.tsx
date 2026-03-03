@@ -128,7 +128,7 @@ const OpenSource = () => {
 
         <div className="opensource-item">
           <div className="opensource-header">
-            <h4>Boileroom: A unified serverless platform for protein models</h4>
+            <h4>boileroom: a unified serverless platform for protein models</h4>
             <GitHubStats owner="softnanolab" repo="boileroom" />
           </div>
           <a

@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 import { useGitHubRepoStats } from '../data/hooks';
 import { getNameSlug } from '../data/team';
 import { publications, PublicationAuthor } from '../data/publications';
+import { labUpdates } from '../data/updates';
 import { useEffect, useState } from 'react';
-
-const CalendarIcon = () => (
-  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="calendar-icon">
-    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
-  </svg>
-);
+import CalendarIcon from '../components/CalendarIcon';
+import UpdateEntry from '../components/UpdateEntry';
 
 const renderAuthors = (authors: PublicationAuthor[]) => {
   return authors.map((author) => (
@@ -136,94 +133,9 @@ const Home = () => {
           <span className="pixel-icon blink-fast">👾</span> LAB UPDATES
         </div>
         <div className="news-content">
-          <div style={{ display: 'flex', justifyContent: 'center', margin: '12px 0' }}>
-            <a
-              href="https://x.com/_judewells/status/2003055862953512964"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                width: '60%',
-                transform: 'rotate(-1.5deg)',
-                transition: 'transform 0.2s ease',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = 'rotate(0deg)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'rotate(-1.5deg)')}
-            >
-              <video
-                src="/media/profam.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="news-media"
-                style={{ width: '100%', borderRadius: '4px', display: 'block' }}
-              />
-            </a>
-          </div>
-          <p>
-            <strong className="news-date">
-              <CalendarIcon />
-              Dec 22, 2024:
-            </strong>{' '}
-            <span className="new-tag">NEW</span>{' '}
-            <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
-              Jude Wells
-            </Link>{' '}
-            published{' '}
-            <a
-              href="https://x.com/_judewells/status/2003055862953512964"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="news-link"
-            >
-              ProFam
-            </a>
-            , a protein family language model designed to generate functional protein variants and
-            predict fitness.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', margin: '12px 0' }}>
-            <a
-              href="https://x.com/jakublala/status/1999045952343065076"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                width: '60%',
-                transform: 'rotate(1.5deg)',
-                transition: 'transform 0.2s ease',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = 'rotate(0deg)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'rotate(1.5deg)')}
-            >
-              <img
-                src="/media/in_silico.jpeg"
-                alt="In-Silico #3 Event"
-                className="news-media"
-                style={{ width: '100%', borderRadius: '4px', display: 'block' }}
-              />
-            </a>
-          </div>
-          <p>
-            <strong className="news-date">
-              <CalendarIcon />
-              Dec 11, 2024:
-            </strong>{' '}
-            <Link to={`/person/${getNameSlug('Jakub Lala')}`} className="news-link">
-              Jakub
-            </Link>{' '}
-            co-organized{' '}
-            <a
-              href="https://x.com/jakublala/status/1999045952343065076"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="news-link"
-            >
-              In-Silico #3
-            </a>{' '}
-            with Gabriele Corso (Boltz), Charlie Harris, Callum Dysdale, and Hiruna Cretu as
-            speakers.
-          </p>
+          {labUpdates.slice(0, 3).map((update, index) => (
+            <UpdateEntry key={update.id} update={update} index={index} />
+          ))}
         </div>
       </motion.section>
 
@@ -320,7 +232,7 @@ const Home = () => {
 
         <div className="opensource-item">
           <div className="opensource-header">
-            <h4>Boileroom: A unified serverless platform for protein models</h4>
+            <h4>boileroom: a unified serverless platform for protein models</h4>
             <GitHubStats owner="softnanolab" repo="boileroom" />
           </div>
           <a
@@ -361,7 +273,7 @@ const Home = () => {
             Stefano
           </Link>{' '}
           (s.angioletti-uberti@imperial.ac.uk) or{' '}
-          <Link to={`/person/${getNameSlug('Jakub Lala')}`} className="contact-link">
+          <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="contact-link">
             Jakub
           </Link>{' '}
           (jakublala@gmail.com)
