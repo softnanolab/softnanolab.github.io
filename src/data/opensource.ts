@@ -18,7 +18,7 @@ export const openSourceProjects: OpenSourceProject[] = [
   },
   {
     id: 'boileroom',
-    name: 'Boileroom: A unified serverless platform for protein models',
+    name: 'boileroom: a unified serverless platform for protein models',
     description:
       'Unified serverless platform for deploying and running protein structure prediction models',
     githubOwner: 'softnanolab',

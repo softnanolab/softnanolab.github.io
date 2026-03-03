@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const CalendarIcon = () => (
-  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="calendar-icon">
-    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
-  </svg>
-);
+import CalendarIcon from '../components/CalendarIcon';
 
 interface Tweet {
   id: string;
@@ -22,22 +18,22 @@ const allTweets: Tweet[] = [
   {
     id: '2003055862953512964',
     username: '_judewells',
-    date: '2024-12-22',
+    date: '2025-12-22',
   },
   {
     id: '2001351684514287794',
     username: 'jakublala',
-    date: '2024-12-14',
+    date: '2025-12-14',
   },
   {
     id: '1999045952343065076',
     username: 'jakublala',
-    date: '2024-12-11',
+    date: '2025-12-11',
   },
   {
     id: '1942956074241294801',
     username: 'jakublala',
-    date: '2024-10-08',
+    date: '2025-10-08',
   },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

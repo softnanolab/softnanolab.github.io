@@ -10,6 +10,6 @@ export const site = {
     { path: '/outreach', label: 'POSTS', icon: '📢' },
   ],
   marqueeText:
-    '+++ Lisan Al Gaib - Jude Wells - got 5th place in the Adapty Bio Nippah Virus Hackathon using microsoft word +++',
+    '+++ Jude Wells won the protein binder design track at the Berlin Bio × AI Hackathon with ProFam-DEvo +++',
   footerText: '\u00a9 2025 SoftNanoLab.',
 };

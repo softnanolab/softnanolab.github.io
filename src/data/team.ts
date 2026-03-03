@@ -19,6 +19,8 @@ export interface TeamMember {
 // Helper function to create slug from name for routing
 export function getNameSlug(name: string): string {
   return name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
@@ -55,7 +57,7 @@ export const team: TeamMember[] = [
     },
   },
   {
-    name: 'Jakub Lala',
+    name: 'Jakub Lála',
     role: 'PhD Student',
     bio: 'PhD student researching computational methods for protein engineering and design.',
     avatar: '\ud83d\udc68\u200d\ud83d\udcbb',
@@ -92,7 +94,7 @@ export const team: TeamMember[] = [
       github: 'https://github.com/harshagrawal13',
       linkedin: 'https://www.linkedin.com/in/harshag1312/',
       x: 'https://x.com/harshag1312',
-      website: 'https://harsh-agrawa.com',
+      website: 'https://harsh-agrawal.com',
     },
   },
   {
@@ -123,7 +125,7 @@ export const team: TeamMember[] = [
 
 export const pastMembers: TeamMember[] = [
   {
-    name: 'Aayham Al-Saffar',
+    name: 'Ayham Al-Saffar',
     role: 'Former Undergraduate Student',
     bio: 'Materials Science and Engineering undergraduate who co-authored the [BAGEL](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013774) protein engineering framework. Created molecular simulation tools for materials science education at Imperial.',
     avatar: '🔬',
