@@ -59,7 +59,7 @@ export const labUpdates: LabUpdate[] = [
     date: '2026-02-25',
     media: {
       type: 'image',
-      src: '/media/in_silico_004.png',
+      src: '/media/in_silico_004.jpg',
       alt: 'In Silico #004 Event',
       link: 'https://luma.com/gb3uso7t',
     },
@@ -88,7 +88,7 @@ export const labUpdates: LabUpdate[] = [
     date: '2026-01-22',
     media: {
       type: 'image',
-      src: '/media/foresight_fellow_jakub.png',
+      src: '/media/foresight_fellow_jakub.jpg',
       alt: 'Jakub Lála - Foresight Institute 2026 Fellow',
       link: 'https://foresight.org/fellowship/',
     },
