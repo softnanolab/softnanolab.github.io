@@ -50,7 +50,7 @@ export const labUpdates: LabUpdate[] = [
         >
           ProFam language model
         </a>
-        . The team won $10k in Adaptyv Bio Foundry credits to experimentally validate their designs.
+        .
       </>
     ),
   },
