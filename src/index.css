@@ -252,7 +252,6 @@ header {
   color: var(--dark-blue);
   border-bottom-color: var(--dark-blue);
   background-color: var(--light-blue);
-  padding: 0 0.2rem;
 }
 
 .news-date {
@@ -538,7 +537,6 @@ header {
   color: var(--dark-blue);
   text-decoration-color: var(--red);
   background-color: var(--light-blue);
-  padding: 0 0.2rem;
 }
 
 .person-description-large .bio-link {
@@ -553,7 +551,6 @@ header {
   color: var(--dark-blue);
   text-decoration-color: var(--red);
   background-color: var(--light-blue);
-  padding: 0 0.2rem;
 }
 
 .team-social-icons {
@@ -971,7 +968,6 @@ header {
   color: var(--dark-blue);
   border-bottom-color: var(--dark-blue);
   background-color: var(--light-blue);
-  padding: 0 0.2rem;
 }
 
 /* Footer */
