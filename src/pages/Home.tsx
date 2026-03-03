@@ -272,11 +272,7 @@ const Home = () => {
           >
             Stefano
           </Link>{' '}
-          (s.angioletti-uberti@imperial.ac.uk) or{' '}
-          <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="contact-link">
-            Jakub
-          </Link>{' '}
-          (jakublala@gmail.com)
+          (s.angioletti-uberti@imperial.ac.uk)
         </p>
       </motion.section>
     </>
