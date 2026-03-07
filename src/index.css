@@ -899,6 +899,12 @@ header {
   background-color: var(--light-blue);
 }
 
+.pub-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 /* Contact Styles */
 .contact-card {
   background: white;

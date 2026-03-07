@@ -60,9 +60,31 @@ const Publications = () => {
               <h4>{pub.title}</h4>
               <p className="pub-journal">{pub.journal}</p>
               <div className="pub-authors">{renderAuthors(pub.authors)}</div>
-              <a href={pub.link} target="_blank" rel="noopener noreferrer" className="pixel-link">
-                Read Article →
-              </a>
+              <div className="pub-links">
+                <a href={pub.link} target="_blank" rel="noopener noreferrer" className="pixel-link">
+                  Paper →
+                </a>
+                {pub.codeLink && (
+                  <a
+                    href={pub.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pixel-link"
+                  >
+                    Code →
+                  </a>
+                )}
+                {pub.dataLink && (
+                  <a
+                    href={pub.dataLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pixel-link"
+                  >
+                    Data →
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}
