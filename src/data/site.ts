@@ -7,7 +7,6 @@ export const site = {
     { path: '/publications', label: 'PUBLICATIONS', icon: '📜' },
     { path: '/updates', label: 'LAB UPDATES', icon: '📰' },
     { path: '/opensource', label: 'OPEN SOURCE', icon: '💻' },
-    { path: '/outreach', label: 'POSTS', icon: '📢' },
   ],
   marqueeText:
     '+++ Jude Wells won the protein binder design track at the Berlin Bio × AI Hackathon with ProFam-DEvo +++',
