@@ -11,6 +11,10 @@ import UpdateEntry from '../components/UpdateEntry';
 
 const visibleProjects = openSourceProjects.filter((project) => !project.hidden);
 
+const threeMonthsAgo = new Date();
+threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+const recentUpdates = labUpdates.filter((update) => new Date(update.date) >= threeMonthsAgo);
+
 const renderAuthors = (authors: PublicationAuthor[]) => {
   return authors.map((author) => (
     <span key={author.name}>
@@ -145,7 +149,7 @@ const Home = () => {
           <span className="pixel-icon blink-fast">👾</span> LAB UPDATES
         </div>
         <div className="news-content">
-          {labUpdates.slice(0, 4).map((update, index) => (
+          {recentUpdates.map((update, index) => (
             <UpdateEntry key={update.id} update={update} index={index} />
           ))}
         </div>
