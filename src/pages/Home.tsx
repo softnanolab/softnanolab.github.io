@@ -145,7 +145,7 @@ const Home = () => {
           <span className="pixel-icon blink-fast">👾</span> LAB UPDATES
         </div>
         <div className="news-content">
-          {labUpdates.slice(0, 3).map((update, index) => (
+          {labUpdates.slice(0, 4).map((update, index) => (
             <UpdateEntry key={update.id} update={update} index={index} />
           ))}
         </div>
