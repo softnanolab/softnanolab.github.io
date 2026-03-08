@@ -117,9 +117,9 @@ const Home = () => {
     <>
       <motion.section
         className="news-box"
-        initial={{ rotate: -1, scale: 0.9 }}
-        animate={{ rotate: -1, scale: 1 }}
-        whileHover={{ rotate: 0, scale: 1.02 }}
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.02 }}
         transition={{ type: 'spring', stiffness: 300 }}
       >
         <div className="news-header">
