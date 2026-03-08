@@ -17,6 +17,52 @@ export interface LabUpdate {
 
 export const labUpdates: LabUpdate[] = [
   {
+    id: 'stefano-sabbatical-odense-feb-2026',
+    date: '2026-02-09',
+    media: {
+      type: 'image',
+      src: '/media/stefano_odense.jpg',
+      alt: 'Stefano at Odense University Hospital doing wet-lab CAR-T cell therapy training',
+    },
+    isNew: true,
+    renderContent: () => (
+      <>
+        <Link to={`/person/${getNameSlug('Dr. Stefano Angioletti-Uberti')}`} className="news-link">
+          Stefano
+        </Link>{' '}
+        has landed in Odense! He's on sabbatical at{' '}
+        <a
+          href="https://en.ouh.dk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Odense University Hospital
+        </a>
+        , getting hands-on wet-lab training in CAR-T cell therapy with{' '}
+        <a
+          href="https://portal.findresearcher.sdu.dk/en/persons/mike-bogetofte-barnkob-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Mike Bogetofte Barnkob
+        </a>{' '}
+        and the{' '}
+        <a
+          href="https://www.sdu.dk/en/forskning/citco"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          CITCO
+        </a>{' '}
+        team at the University of Southern Denmark — pioneers in cancer cellular immunotherapy. A
+        fantastic new chapter bridging our computational work with cutting-edge clinical science!
+      </>
+    ),
+  },
+  {
     id: 'mini-enzymes-mar-2026',
     date: '2026-03-05',
     media: {
