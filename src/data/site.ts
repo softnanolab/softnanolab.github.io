@@ -9,6 +9,6 @@ export const site = {
     { path: '/opensource', label: 'OPEN SOURCE', icon: '💻' },
   ],
   marqueeText:
-    '+++ Jude Wells won the protein binder design track at the Berlin Bio × AI Hackathon with ProFam-DEvo +++',
+    '+++ WE ARE HIRING — Open PhD position with Stefano at Imperial College London. Apply by 30 March! +++',
   footerText: '\u00a9 2025 SoftNanoLab.',
 };
