@@ -8,7 +8,7 @@ const renderAuthors = (authors: PublicationAuthor[]) => {
   return authors.map((author) => (
     <span key={author.name}>
       {author.isTeamMember ? (
-        <Link to={`/person/${getNameSlug(author.name)}`} className="pub-author-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug(author.name) }} className="pub-author-link">
           {author.name}
         </Link>
       ) : author.externalLink ? (

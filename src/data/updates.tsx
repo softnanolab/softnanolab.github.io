@@ -17,6 +17,49 @@ export interface LabUpdate {
 
 export const labUpdates: LabUpdate[] = [
   {
+    id: 'glycocalyx-phd-mar-2026',
+    date: '2026-03-18',
+    media: {
+      type: 'image',
+      src: '/media/glycocalyx_logo.png',
+      alt: 'GLYCOCALYX EU Marie Skłodowska-Curie Doctoral Network',
+      link: 'https://www.glycocalyx.org/',
+    },
+    isNew: true,
+    renderContent: () => (
+      <>
+        Open PhD position — come work with{' '}
+        <Link
+          to="/team"
+          state={{ scrollTo: getNameSlug('Dr. Stefano Angioletti-Uberti') }}
+          className="news-link"
+        >
+          Stefano
+        </Link>
+        ! He&apos;s recruiting for DC15 in the EU{' '}
+        <a
+          href="https://www.glycocalyx.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          GLYCOCALYX
+        </a>{' '}
+        network: using CG modelling + ML to unravel how the glycocalyx — the sugar coat on cell
+        surfaces — gates viral attachment to cells. Fully funded at Imperial College London for 36
+        months.{' '}
+        <a
+          href="https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=27204&jobTitle=Marie+Sk%C5%82odowska-Curie+Doctoral+Network+Researcher"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Apply by 30 March →
+        </a>
+      </>
+    ),
+  },
+  {
     id: 'mini-enzymes-mar-2026',
     date: '2026-03-05',
     media: {
@@ -27,15 +70,19 @@ export const labUpdates: LabUpdate[] = [
     isNew: true,
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
           Jakub
         </Link>
         , Harsh, Fanfei,{' '}
-        <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jude Wells') }} className="news-link">
           Jude
         </Link>
         , and{' '}
-        <Link to={`/person/${getNameSlug('Dr. Stefano Angioletti-Uberti')}`} className="news-link">
+        <Link
+          to="/team"
+          state={{ scrollTo: getNameSlug('Dr. Stefano Angioletti-Uberti') }}
+          className="news-link"
+        >
           Stefano
         </Link>{' '}
         published a new{' '}
@@ -96,7 +143,7 @@ export const labUpdates: LabUpdate[] = [
         AI-driven protein design competition are out! Competitors from 42+ countries submitted
         12,000 CD20 binder sequences for CAR-T immunotherapy — 707 showed CD20-specific
         proliferation, with 3 confirmed to bind CD20 as non-CAR binders.{' '}
-        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
           Jakub
         </Link>{' '}
         co-authored the manuscript.
@@ -115,7 +162,7 @@ export const labUpdates: LabUpdate[] = [
     isNew: true,
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jude Wells') }} className="news-link">
           Jude Wells
         </Link>{' '}
         and team won the protein binder design track at the{' '}
@@ -153,7 +200,7 @@ export const labUpdates: LabUpdate[] = [
     isNew: true,
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
           Jakub
         </Link>{' '}
         co-organized{' '}
@@ -181,7 +228,11 @@ export const labUpdates: LabUpdate[] = [
     isNew: true,
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Dr. Stefano Angioletti-Uberti')}`} className="news-link">
+        <Link
+          to="/team"
+          state={{ scrollTo: getNameSlug('Dr. Stefano Angioletti-Uberti') }}
+          className="news-link"
+        >
           Stefano
         </Link>{' '}
         has landed in Odense! He's on sabbatical at{' '}
@@ -228,7 +279,7 @@ export const labUpdates: LabUpdate[] = [
     isNew: true,
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
           Jakub
         </Link>{' '}
         was selected as a 2026{' '}
@@ -255,7 +306,7 @@ export const labUpdates: LabUpdate[] = [
     },
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Jude Wells')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jude Wells') }} className="news-link">
           Jude Wells
         </Link>{' '}
         published{' '}
@@ -283,7 +334,7 @@ export const labUpdates: LabUpdate[] = [
     },
     renderContent: () => (
       <>
-        <Link to={`/person/${getNameSlug('Jakub Lála')}`} className="news-link">
+        <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
           Jakub
         </Link>{' '}
         co-organized{' '}

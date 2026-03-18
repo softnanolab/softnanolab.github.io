@@ -222,7 +222,8 @@ const Home = () => {
           If you are an experimental biologist, chemist, ML engineer, or just want to chat, please
           drop an email to{' '}
           <Link
-            to={`/person/${getNameSlug('Dr. Stefano Angioletti-Uberti')}`}
+            to="/team"
+            state={{ scrollTo: getNameSlug('Dr. Stefano Angioletti-Uberti') }}
             className="contact-link"
           >
             Stefano

@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTeam } from '../data/hooks';
-import { SocialLinks, pastMembers } from '../data/team';
+import { SocialLinks, pastMembers, getNameSlug } from '../data/team';
 
 const GithubIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -100,6 +101,18 @@ const parseBioLinks = (text: string) => {
 
 const Team = () => {
   const team = useTeam();
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (scrollTo) {
+      const timer = window.setTimeout(() => {
+        const el = document.getElementById(scrollTo);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 600);
+      return () => window.clearTimeout(timer);
+    }
+  }, [location.state]);
 
   return (
     <>
@@ -133,6 +146,7 @@ const Team = () => {
       <div className="team-grid">
         {team.map((member, index) => (
           <motion.div
+            id={getNameSlug(member.name)}
             key={member.name}
             className="team-card"
             initial={{ y: 50, opacity: 0 }}
@@ -176,6 +190,7 @@ const Team = () => {
       <div className="team-grid">
         {pastMembers.map((member, index) => (
           <motion.div
+            id={getNameSlug(member.name)}
             key={member.name}
             className="team-card"
             initial={{ y: 50, opacity: 0 }}
