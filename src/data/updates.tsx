@@ -21,8 +21,8 @@ export const labUpdates: LabUpdate[] = [
     date: '2026-03-18',
     media: {
       type: 'image',
-      src: '/media/glycocalyx_logo.png',
-      alt: 'GLYCOCALYX EU Marie Skłodowska-Curie Doctoral Network',
+      src: '/media/glycocalyx_virus.png',
+      alt: 'SARS-CoV-2 virus attaching to cell glycocalyx — illustration of viral attachment mechanism',
       link: 'https://www.glycocalyx.org/',
     },
     isNew: true,
