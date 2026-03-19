@@ -129,6 +129,12 @@ export const labUpdates: LabUpdate[] = [
     id: 'bits-to-binders-mar-2026',
     date: '2026-03-03',
     isNew: true,
+    media: {
+      type: 'image',
+      src: '/media/bits_to_binders_fig.png',
+      alt: 'Bits to Binders — BAGEL achieved the best hit-rate in the pooled proliferation assay',
+      link: 'https://www.biorxiv.org/content/10.64898/2026.03.03.709355v2',
+    },
     renderContent: () => (
       <>
         The results of the{' '}
@@ -140,9 +146,17 @@ export const labUpdates: LabUpdate[] = [
         >
           Bits to Binders
         </a>{' '}
-        AI-driven protein design competition are out! Competitors from 42+ countries submitted
-        12,000 CD20 binder sequences for CAR-T immunotherapy — 707 showed CD20-specific
-        proliferation, with 3 confirmed to bind CD20 as non-CAR binders.{' '}
+        AI-driven protein design competition are out!{' '}
+        <a
+          href="https://github.com/softnanolab/bagel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          BAGEL
+        </a>{' '}
+        achieved the best hit-rate in the pooled CD20-specific proliferation assay — more than 2x
+        better than Chroma, from a recently IPO&apos;d company.{' '}
         <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
           Jakub
         </Link>{' '}
