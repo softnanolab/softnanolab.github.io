@@ -17,6 +17,63 @@ export interface LabUpdate {
 
 export const labUpdates: LabUpdate[] = [
   {
+    id: 'harsh-encode-fellowship-jul-2026',
+    date: '2026-07-06',
+    isNew: true,
+    renderContent: () => (
+      <>
+        Huge congratulations to{' '}
+        <Link to="/team" state={{ scrollTo: getNameSlug('Harsh Agrawal') }} className="news-link">
+          Harsh Agrawal
+        </Link>
+        , who has been awarded a prestigious{' '}
+        <a
+          href="https://encode.pillar.vc/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Encode: AI for Science Fellowship
+        </a>{' '}
+        to work with the group of{' '}
+        <a
+          href="https://eng.ox.ac.uk/people/molly-stevens"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Molly Stevens
+        </a>{' '}
+        at the University of Oxford. A richly deserved recognition — we couldn&apos;t be prouder.
+        Congratulations, Harsh!
+      </>
+    ),
+  },
+  {
+    id: 'isambard-ai-compute-jul-2026',
+    date: '2026-07-02',
+    isNew: true,
+    renderContent: () => (
+      <>
+        We&apos;ve been awarded 10,000 hours of compute on{' '}
+        <a
+          href="https://www.bristol.ac.uk/research/centres/bristol-supercomputing/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="news-link"
+        >
+          Isambard-AI
+        </a>
+        , the UK&apos;s most powerful AI supercomputer, to train a model focused on protein-multimer
+        structure prediction — extending{' '}
+        <Link to="/team" state={{ scrollTo: getNameSlug('Harsh Agrawal') }} className="news-link">
+          Harsh
+        </Link>
+        &apos;s work on protein language models specialized for multimers.
+      </>
+    ),
+  },
+  {
     id: 'glycocalyx-phd-mar-2026',
     date: '2026-03-18',
     media: {
@@ -25,7 +82,6 @@ export const labUpdates: LabUpdate[] = [
       alt: 'SARS-CoV-2 virus attaching to cell glycocalyx — illustration of viral attachment mechanism',
       link: 'https://www.glycocalyx.org/',
     },
-    isNew: true,
     renderContent: () => (
       <>
         Open PhD position — come work with{' '}
@@ -67,7 +123,6 @@ export const labUpdates: LabUpdate[] = [
       src: '/media/mini_enzymes.mp4',
       link: 'https://x.com/jakublala/status/2029918079094829357',
     },
-    isNew: true,
     renderContent: () => (
       <>
         <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
@@ -128,7 +183,6 @@ export const labUpdates: LabUpdate[] = [
   {
     id: 'bits-to-binders-mar-2026',
     date: '2026-03-03',
-    isNew: true,
     media: {
       type: 'image',
       src: '/media/bits_to_binders_fig.png',
@@ -173,7 +227,6 @@ export const labUpdates: LabUpdate[] = [
       alt: 'Berlin Bio x AI Hackathon - Team In Silico presenting ProFam-DEvo',
       link: 'https://www.biohack.berlin/',
     },
-    isNew: true,
     renderContent: () => (
       <>
         <Link to="/team" state={{ scrollTo: getNameSlug('Jude Wells') }} className="news-link">
@@ -211,7 +264,6 @@ export const labUpdates: LabUpdate[] = [
       alt: 'In Silico #004 Event',
       link: 'https://luma.com/gb3uso7t',
     },
-    isNew: true,
     renderContent: () => (
       <>
         <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
@@ -239,7 +291,6 @@ export const labUpdates: LabUpdate[] = [
       src: '/media/stefano_odense.jpg',
       alt: 'Stefano at Odense University Hospital doing wet-lab CAR-T cell therapy training',
     },
-    isNew: true,
     renderContent: () => (
       <>
         <Link
@@ -290,7 +341,6 @@ export const labUpdates: LabUpdate[] = [
       alt: 'Jakub Lála - Foresight Institute 2026 Fellow',
       link: 'https://foresight.org/fellowship/',
     },
-    isNew: true,
     renderContent: () => (
       <>
         <Link to="/team" state={{ scrollTo: getNameSlug('Jakub Lála') }} className="news-link">
