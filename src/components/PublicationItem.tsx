@@ -41,7 +41,9 @@ const PublicationItem = ({ pub, index }: PublicationItemProps) => (
     transition={{ delay: index * 0.1 + 0.3 }}
   >
     <div className="pub-icon">
-      {pub.title.includes('BAGEL') ? (
+      {pub.logo ? (
+        <img src={pub.logo.src} alt={pub.logo.alt} className="bagel-logo-pub" />
+      ) : pub.title.includes('BAGEL') ? (
         <img src="/logos/bagel-logo.png" alt="BAGEL Logo" className="bagel-logo-pub" />
       ) : (
         <div className="pub-year-badge">{pub.year}</div>

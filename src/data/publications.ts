@@ -12,6 +12,7 @@ export interface Publication {
   authors: PublicationAuthor[];
   link: string;
   date: string; // ISO date for sorting
+  logo?: { src: string; alt: string };
   codeLink?: string;
   dataLink?: string;
 }
@@ -21,6 +22,7 @@ export const publications: Publication[] = [
     id: 10,
     year: '2026',
     title: 'BAGEL-CAR: Reflections on the Bits to Binders Competition',
+    logo: { src: '/logos/bagel-car-logo.png', alt: 'BAGEL-CAR car logo' },
     journal: 'bioRxiv',
     authors: [
       { name: 'Jakub Lála', isTeamMember: true },
