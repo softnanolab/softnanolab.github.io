@@ -18,6 +18,18 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    id: 10,
+    year: '2026',
+    title: 'BAGEL-CAR: Reflections on the Bits to Binders Competition',
+    journal: 'bioRxiv',
+    authors: [
+      { name: 'Jakub Lála', isTeamMember: true },
+      { name: 'Dr. Stefano Angioletti-Uberti', isTeamMember: true },
+    ],
+    link: 'https://www.biorxiv.org/content/10.64898/2026.09.02.748856v1',
+    date: '2026-09-04',
+  },
+  {
     id: 5,
     year: '2026',
     title:

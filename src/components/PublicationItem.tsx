@@ -51,6 +51,7 @@ const PublicationItem = ({ pub, index }: PublicationItemProps) => (
       <div className="pub-year-label">
         <CalendarIcon />
         {new Date(pub.date).toLocaleDateString('en-US', {
+          timeZone: 'UTC',
           year: 'numeric',
           month: 'long',
           day: 'numeric',
